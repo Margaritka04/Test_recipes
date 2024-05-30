@@ -10,7 +10,7 @@ public class MyAppSQLiteHelper extends SQLiteOpenHelper {
     public Context context;
     public static final String DATABASE_NAME = "dataManager";
     public static final int DATABASE_VERSION = 1;
-//    public static final String TABLE_RECIPES = "";
+    //    public static final String TABLE_RECIPES = "";
     public static final String KEY_ID = "id";
     public static final String KEY_IMG_URL = "Img";
     public MyAppSQLiteHelper(@Nullable Context context, @Nullable String name, @Nullable SQLiteDatabase.CursorFactory factory, int version) {

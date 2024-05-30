@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -31,6 +32,9 @@ public class RecipesList extends AppCompatActivity implements RecipeAdapter.OnRe
                 recipe.getName(), Toast.LENGTH_LONG).show();
     }
 
+    private DBManager db = new DBManager(new MyAppSQLiteHelper(this, "my_database.db", null, 1));
+    private ArrayList<Recipe> recipes = new ArrayList<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,7 +48,12 @@ public class RecipesList extends AppCompatActivity implements RecipeAdapter.OnRe
             ab.setDisplayHomeAsUpEnabled(true);
 
         }
-        ArrayList<Recipe> recipes = new ArrayList<>();
+
+        Button btnUpdate = (Button) tb.findViewById(R.id.updating);
+        btnUpdate.setOnClickListener(v -> {
+            recipes = db.loadAllRecipesFromDatabase();
+        });
+
         recipes.add(new Recipe("Cake", "мука, клубника, персик", 20, "уаоиысгы" ));
         recipes.add(new Recipe("Cake", "мука, клубника, персик", 20, "уаоиысгы"));
         recipes.add(new Recipe("Cake", "мука, клубника, персик", 20, "уаоиысгы"));
@@ -79,6 +88,9 @@ public class RecipesList extends AppCompatActivity implements RecipeAdapter.OnRe
         if (id == android.R.id.home) {
             finish();
             return true;
+        }
+        if (id == R.id.updating){
+            Toast.makeText(this, "", Toast.LENGTH_LONG).show();
         }
         return super.onOptionsItemSelected(item);
     }

@@ -6,15 +6,21 @@
         android:id="@+id/find"
         android:icon="@drawable/find"
         android:title="Поиск"
-        app:showAsAction="ifRoom"/>
+        app:showAsAction="always"/>
     <item
         android:id="@+id/add"
         android:icon="@drawable/add"
         android:title="Добавить рецепт"
-        app:showAsAction="ifRoom"/>
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/updating"
+        android:icon="@drawable/ic_action_updating"
+        android:title="Обновить все рецепты"
+        app:showAsAction="always"/>
     <item
     android:id="@+id/exit"
     android:icon="@drawable/exit"
     android:title="Выход"
     app:showAsAction="never"/>
+
 </menu>

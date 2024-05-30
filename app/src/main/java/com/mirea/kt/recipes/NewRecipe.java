@@ -74,25 +74,25 @@ public class NewRecipe extends AppCompatActivity implements View.OnClickListener
 
     @Override
     public void onClick(View v) {
-        if (v.getId() == R.id.btnAddRecipe){
-            if (this.dbManager != null){
-                String name = editTextName.getText().toString();
-                String ingredients = editTextIngredients.getText().toString();
-                String cookingTime = editTextCookingTime.getText().toString();
-                String methodOfPreparation = editTextMethodOfPreparation.getText().toString();
-
-                if (!name.isEmpty() && !ingredients.isEmpty() && !cookingTime.isEmpty() && !methodOfPreparation.isEmpty()){
-                    boolean result = dbManager.saveRecipeToDatabase(new Recipe(name, ingredients, Integer.parseInt(cookingTime), methodOfPreparation));
-                    if (result){
-                        Toast.makeText(this, R.string.insert_success,Toast.LENGTH_LONG).show();
-                    }else{
-                        Toast.makeText(this, R.string.insert_error,Toast.LENGTH_LONG).show();
-                    }
-                }else {
-                    Toast.makeText(this, R.string.incorrect_value,Toast.LENGTH_LONG).show();
-                }
-            }
-        }
-
+//        if (v.getId() == R.id.btnAddRecipe){
+//            if (this.dbManager != null){
+//                String name = editTextName.getText().toString();
+//                String ingredients = editTextIngredients.getText().toString();
+//                String cookingTime = editTextCookingTime.getText().toString();
+//                String methodOfPreparation = editTextMethodOfPreparation.getText().toString();
+//
+//                if (!name.isEmpty() && !ingredients.isEmpty() && !cookingTime.isEmpty() && !methodOfPreparation.isEmpty()){
+//                    boolean result = dbManager.saveRecipeToDatabase(new Recipe(name, ingredients, Integer.parseInt(cookingTime), methodOfPreparation));
+//                    if (result){
+//                        Toast.makeText(this, R.string.insert_success,Toast.LENGTH_LONG).show();
+//                    }else{
+//                        Toast.makeText(this, R.string.insert_error,Toast.LENGTH_LONG).show();
+//                    }
+//                }else {
+//                    Toast.makeText(this, R.string.incorrect_value,Toast.LENGTH_LONG).show();
+//                }
+//            }
+//        }
+//
     }
 }

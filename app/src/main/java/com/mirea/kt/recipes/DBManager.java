@@ -18,12 +18,12 @@ public class DBManager {
     public boolean saveRecipeToDatabase(Recipe recipe){
         SQLiteDatabase db = this.sqLiteHelper.getWritableDatabase();
         ContentValues cv = new ContentValues();
-        cv.put("RecipesName", recipe.getName());
-        cv.put("Ingredients", recipe.getIngredients());
-        cv.put("CookingTime", recipe.getCookingTime());
-        cv.put("MethodOfPreparation", recipe.getMethodOfPreparation());
+        cv.put("name", recipe.getName());
+        cv.put("ingredients", recipe.getIngredients());
+        cv.put("cookingTime", recipe.getCookingTime());
+        cv.put("methodOfPreparation", recipe.getMethodOfPreparation());
 
-        long rowId = db.insert(null,null,cv);
+        long rowId = db.insert("TABLE_RECIPES",null,cv);
         cv.clear();
         db.close();
         return rowId != -1;
@@ -35,11 +35,11 @@ public class DBManager {
         Cursor dbCursor = db.query("TABLE_RECIPES", null, null, null,null,null,null);
         if (dbCursor.moveToFirst()){
             do {
-                String name = dbCursor.getString(dbCursor.getColumnIndexOrThrow("Название рецепта"));
-                String ingredients = dbCursor.getString(dbCursor.getColumnIndexOrThrow("Ингредиенты"));
-                String cookingTime = dbCursor.getString(dbCursor.getColumnIndexOrThrow("Время приготовления"));
-                String MethodOfPreparation = dbCursor.getString(dbCursor.getColumnIndexOrThrow("Способ приготовления"));
-                int avatar = dbCursor.getInt(dbCursor.getColumnIndexOrThrow("Иконка рецепта"));
+                String name = dbCursor.getString(dbCursor.getColumnIndexOrThrow("name"));
+                String ingredients = dbCursor.getString(dbCursor.getColumnIndexOrThrow("ingredients"));
+                String cookingTime = dbCursor.getString(dbCursor.getColumnIndexOrThrow("cookingTime"));
+                String MethodOfPreparation = dbCursor.getString(dbCursor.getColumnIndexOrThrow("methodOfPreparation"));
+//                int avatar = dbCursor.getInt(dbCursor.getColumnIndexOrThrow("Иконка рецепта"));
             }while (dbCursor.moveToNext());
         }
         dbCursor.close();
