@@ -37,9 +37,10 @@ public class DBManager {
             do {
                 String name = dbCursor.getString(dbCursor.getColumnIndexOrThrow("name"));
                 String ingredients = dbCursor.getString(dbCursor.getColumnIndexOrThrow("ingredients"));
-                String cookingTime = dbCursor.getString(dbCursor.getColumnIndexOrThrow("cookingTime"));
-                String MethodOfPreparation = dbCursor.getString(dbCursor.getColumnIndexOrThrow("methodOfPreparation"));
+                int cookingTime = dbCursor.getInt(dbCursor.getColumnIndexOrThrow("cookingTime"));
+                String methodOfPreparation = dbCursor.getString(dbCursor.getColumnIndexOrThrow("methodOfPreparation"));
 //                int avatar = dbCursor.getInt(dbCursor.getColumnIndexOrThrow("Иконка рецепта"));
+                recipes.add(new Recipe(name, ingredients, cookingTime, methodOfPreparation));
             }while (dbCursor.moveToNext());
         }
         dbCursor.close();

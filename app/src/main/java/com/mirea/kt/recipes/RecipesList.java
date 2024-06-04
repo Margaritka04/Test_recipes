@@ -49,10 +49,11 @@ public class RecipesList extends AppCompatActivity implements RecipeAdapter.OnRe
 
         }
 
-        Button btnUpdate = (Button) tb.findViewById(R.id.updating);
-        btnUpdate.setOnClickListener(v -> {
-            recipes = db.loadAllRecipesFromDatabase();
-        });
+//        Button btnUpdate = (Button) tb.findViewById(R.id.updating);
+//        btnUpdate.setOnClickListener(v -> {
+//            recipes = db.loadAllRecipesFromDatabase();
+//        });
+        recipes = db.loadAllRecipesFromDatabase();
 
         recipes.add(new Recipe("Cake", "мука, клубника, персик", 20, "уаоиысгы" ));
         recipes.add(new Recipe("Cake", "мука, клубника, персик", 20, "уаоиысгы"));
@@ -90,7 +91,7 @@ public class RecipesList extends AppCompatActivity implements RecipeAdapter.OnRe
             return true;
         }
         if (id == R.id.updating){
-            Toast.makeText(this, "", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "Обновление", Toast.LENGTH_LONG).show();
         }
         return super.onOptionsItemSelected(item);
     }
