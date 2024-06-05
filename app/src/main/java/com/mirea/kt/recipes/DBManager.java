@@ -47,4 +47,14 @@ public class DBManager {
         db.close();
         return recipes;
     }
+    public void delete(int position) {
+        SQLiteDatabase dbManager = this.sqLiteHelper.getWritableDatabase();
+        dbManager.delete("TABLE_RECIPES", "_id = ?", new String[]{String.valueOf(position)});
+    }
+
+    public void clearDatabase() {
+        SQLiteDatabase dbManager = this.sqLiteHelper.getWritableDatabase();
+        dbManager.execSQL("DELETE FROM " + "TABLE_RECIPES");
+        dbManager.close();
+    }
 }

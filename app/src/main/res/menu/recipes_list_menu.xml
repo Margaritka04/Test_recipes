@@ -13,14 +13,12 @@
         android:title="Добавить рецепт"
         app:showAsAction="always"/>
     <item
-        android:id="@+id/updating"
-        android:icon="@drawable/ic_action_updating"
-        android:title="Обновить все рецепты"
-        app:showAsAction="always"/>
-    <item
     android:id="@+id/exit"
     android:icon="@drawable/exit"
     android:title="Выход"
     app:showAsAction="never"/>
-
+    <item
+        android:id="@+id/clear_database"
+        android:title="Очистить базу данных"
+        app:showAsAction="never"/>
 </menu>

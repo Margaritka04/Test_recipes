@@ -49,6 +49,7 @@ public class NewRecipe extends AppCompatActivity implements View.OnClickListener
                     if (!name.isEmpty() && !ingredients.isEmpty() && !cookingTime.isEmpty() && !methodOfPreparation.isEmpty()){
                         boolean result = dbManager.saveRecipeToDatabase(new Recipe(name, ingredients, Integer.parseInt(cookingTime), methodOfPreparation));
                         if (result){
+                            finish();
                             Toast.makeText(this, R.string.insert_success,Toast.LENGTH_LONG).show();
                         }else{
                             Toast.makeText(this, R.string.insert_error,Toast.LENGTH_LONG).show();
