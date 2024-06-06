@@ -5,6 +5,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.media.Image;
+import android.net.Uri;
 
 import java.util.ArrayList;
 
@@ -22,6 +23,7 @@ public class DBManager {
         cv.put("ingredients", recipe.getIngredients());
         cv.put("cookingTime", recipe.getCookingTime());
         cv.put("methodOfPreparation", recipe.getMethodOfPreparation());
+        cv.put("avatar", recipe.getAvatar().toString());
 
         long rowId = db.insert("TABLE_RECIPES",null,cv);
         cv.clear();
@@ -39,17 +41,19 @@ public class DBManager {
                 String ingredients = dbCursor.getString(dbCursor.getColumnIndexOrThrow("ingredients"));
                 int cookingTime = dbCursor.getInt(dbCursor.getColumnIndexOrThrow("cookingTime"));
                 String methodOfPreparation = dbCursor.getString(dbCursor.getColumnIndexOrThrow("methodOfPreparation"));
-//                int avatar = dbCursor.getInt(dbCursor.getColumnIndexOrThrow("Иконка рецепта"));
-                recipes.add(new Recipe(name, ingredients, cookingTime, methodOfPreparation));
+                String avatar = dbCursor.getString(dbCursor.getColumnIndexOrThrow("avatar"));
+
+                recipes.add(new Recipe(name, ingredients, cookingTime, methodOfPreparation, avatar));
+
             }while (dbCursor.moveToNext());
         }
         dbCursor.close();
         db.close();
         return recipes;
     }
-    public void delete(int position) {
+    public void delete(Recipe recipe) {
         SQLiteDatabase dbManager = this.sqLiteHelper.getWritableDatabase();
-        dbManager.delete("TABLE_RECIPES", "_id = ?", new String[]{String.valueOf(position)});
+        dbManager.delete("TABLE_DOCTORS",  "_id" + "=?", new String[]{String.valueOf(recipe.getRecipeId())});
     }
 
     public void clearDatabase() {

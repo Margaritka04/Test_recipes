@@ -81,7 +81,7 @@ public class RecipesList extends AppCompatActivity implements RecipeAdapter.OnRe
             public void onClick(View v) {
                 int radioButtonId = radioGroup.getCheckedRadioButtonId();
                 RadioButton radioButton = dialog.findViewById(radioButtonId);
-                if (radioButton.getText().toString().equals("Да")) {
+                if (radioButton.getText().toString().equals(R.string.yes)) {
                     dbManager.clearDatabase();
                     updateView();
                 }
@@ -104,7 +104,6 @@ public class RecipesList extends AppCompatActivity implements RecipeAdapter.OnRe
         int id = item.getItemId();
         if (id == R.id.add) {
             startActivity(new Intent(getApplicationContext(), NewRecipe.class));
-            Toast.makeText(this, "Добавить новый рецепт", Toast.LENGTH_SHORT).show();
         }
         if (id == R.id.find) {
             Toast.makeText(this, "Найти рецепт", Toast.LENGTH_SHORT).show();

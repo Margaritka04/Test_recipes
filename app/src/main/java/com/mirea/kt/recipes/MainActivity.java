@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
                                     Intent intent = new Intent(getApplicationContext(), RecipesList.class);
                                     startActivity(intent);
                                 } else {
-                                    Toast.makeText(getApplicationContext(), "Неверный логин или пароль", Toast.LENGTH_LONG).show();
+                                    Toast.makeText(getApplicationContext(), R.string.incorrect_login_or_password, Toast.LENGTH_LONG).show();
                                 }
                             } catch (JSONException | NullPointerException ignore) {
 
@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
                     }*/
                 }
             else {
-                Toast.makeText(getApplicationContext(), "Поля не должны быть пустыми!", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), R.string.fields_should_not_be_empty, Toast.LENGTH_LONG).show();
             }
         });
     }

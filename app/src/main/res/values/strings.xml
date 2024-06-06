@@ -8,4 +8,26 @@
     <string name="incorrect_value">Вы ввели неккоректное значение</string>
     <string name="insert_error">При добавлении произошла ошибка</string>
     <string name="insert_success">Запись успешно добавлена</string>
+    <string name="ingredients">Ингредиенты:</string>
+    <string name="cooking_time">Время приготовления:</string>
+    <string name="method_of_preparation">Способ приготовления:</string>
+    <string name="recipe_title">Название рецепта</string>
+    <string name="login">Логин</string>
+    <string name="password">Пароль</string>
+    <string name="ingredients_hint">Ингредиенты</string>
+    <string name="cooking_time_hint">Время приготовления</string>
+    <string name="method_of_preparation_hint">Способ приготовления</string>
+    <string name="recipe_title_hint">Название рецепта</string>
+    <string name="yes">Да</string>
+    <string name="no">Нет</string>
+    <string name="question">Вы уверены, что хотите очистить базу данных?</string>
+    <string name="accept">Подтвердить</string>
+    <string name="exit">Выход</string>
+    <string name="delete">Очистить базу данных</string>
+    <string name="error">Ошибка: </string>
+    <string name="Error_Bad_response_code">Ошибка! Неверный код запроса!</string>
+    <string name="incorrect_login_or_password">Неверный логин или пароль</string>
+    <string name="fields_should_not_be_empty">Поля не должны быть пустыми!</string>
+    <string name="share_recipe">Поделиться рецептом</string>
+    <string name="delete_recipe">Удалить рецепт</string>
 </resources>

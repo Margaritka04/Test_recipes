@@ -67,11 +67,11 @@ public class HTTPRunnable implements Runnable {
                     }
                     responseBody = sbResponse.toString();
                 }else{
-                    System.out.println ("Error! Bad response code!");
+                    System.out.println (R.string.Error_Bad_response_code);
                 }
 
             }catch (IOException ex) {
-                System.out.println ("Error: " + ex.getMessage ());
+                System.out.println (R.string.error + ex.getMessage ());
             }
         }
 

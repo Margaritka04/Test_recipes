@@ -23,12 +23,12 @@ public class ClearDatabaseDialog extends DialogFragment {
     @Override
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-        builder.setMessage("Вы уверены, что хотите очистить базу данных?")
-                .setPositiveButton("Да", (dialog, which) -> {
+        builder.setMessage(R.string.question)
+                .setPositiveButton(R.string.yes, (dialog, which) -> {
                     dbManager.clearDatabase();
                     dismiss();
                 })
-                .setNegativeButton("Нет", (dialog, which) -> dismiss());
+                .setNegativeButton(R.string.no, (dialog, which) -> dismiss());
         return builder.create();
     }
 }

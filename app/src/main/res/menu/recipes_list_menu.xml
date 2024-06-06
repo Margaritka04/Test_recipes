@@ -5,20 +5,18 @@
     <item
         android:id="@+id/find"
         android:icon="@drawable/find"
-        android:title="Поиск"
         app:showAsAction="always"/>
     <item
         android:id="@+id/add"
         android:icon="@drawable/add"
-        android:title="Добавить рецепт"
         app:showAsAction="always"/>
     <item
     android:id="@+id/exit"
     android:icon="@drawable/exit"
-    android:title="Выход"
+    android:title="@string/exit"
     app:showAsAction="never"/>
     <item
         android:id="@+id/clear_database"
-        android:title="Очистить базу данных"
+        android:title="@string/delete"
         app:showAsAction="never"/>
 </menu>
